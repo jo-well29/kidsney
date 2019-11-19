@@ -11,14 +11,14 @@ const Header = () => {
             <h1>Kidsney -</h1>
             <div className="nav-bar">
                 <NavLink exact to='/' activeClassName="active">
-                    Home
-            </NavLink>
-                <NavLink exact to='/movies' activeClassName="active">
-                    Movies
-            </NavLink>
-                <NavLink exact to="/MotD" activeClassName="active">
-                    Movies of the Day
-            </NavLink>
+                        Home
+                </NavLink>
+                    <NavLink exact to='/movies' activeClassName="active">
+                        Movies
+                </NavLink>
+                    <NavLink exact to="/MotD" activeClassName="active">
+                        Movies of the Day
+                </NavLink>
             </div>
         </nav>
     )

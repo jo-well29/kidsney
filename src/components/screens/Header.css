@@ -15,7 +15,7 @@ nav {
     font-size: 20px;
 }
 
-a {
+.nav-bar a {
     text-decoration: none;
     color: white;
 }
