@@ -5,16 +5,16 @@ import './Header.css'
 const Header = () => {
     return (
         <nav>
-            <h1>Kidsney -</h1>
+            <img className="logo" src="https://i.ibb.co/PQwm5Kc/kidsney-logo.png" />
             <div className="nav-bar">
                 <NavLink exact to='/' activeClassName="active">
                         Home
                 </NavLink>
-                    <NavLink exact to='/movies' activeClassName="active">
+                <NavLink exact to='/movies' activeClassName="active">
                         Movies
                 </NavLink>
-                    <NavLink exact to="/MotD" activeClassName="active">
-                        Movies of the Day
+                <NavLink exact to="/MotD" activeClassName="active">
+                        Movie of the Day
                 </NavLink>
             </div>
         </nav>

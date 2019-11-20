@@ -1,0 +1,19 @@
+.addBody {
+    margin: 0;
+    padding: 0;
+
+}
+
+.top {
+    margin: 0;
+    border: 2px solid blue
+
+}
+
+.form-list {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid brown
+
+}

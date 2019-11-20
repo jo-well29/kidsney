@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import './MotD.css'
 
 const baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=0866d1ffb12f508f1c32f3edbf9e47ee&language=en-US&region=US&sort_by=popularity.desc&certification_country=US&certification.lte=PG&include_adult=false&include_video=false&page=1`
 

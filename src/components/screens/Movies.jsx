@@ -31,27 +31,29 @@ export default class Movies extends React.Component {
     render() {
         const movieData = this.state.movies.map((movie, index) => {
             return (
-                <div key={index}>
+                <div key={index} className="movie-container">
                     <h1>{movie.title}</h1>
-                    <img src={movie.imageUrl} />
-                    <h2>Run Time: {movie.runTime} minutes</h2>
+                    <img className="image-url" src={movie.imageUrl} />
+                    <p>Run Time: {movie.runTime} minutes</p>
+                    <h2>{movie.description}</h2>
                 </div>
 
             )
 
         })
         return (
-            <>
+            <div className="movies">
                 <h1>Movies</h1>
                 <div className="movieAdd">
                     <NavLink exact to="/addMovie" activeClassName="active">
                         Add a Movie!
-            </NavLink>
-                    <div className="moviePoster">
-                        <h1>{movieData}</h1>
-                    </div>
+                    </NavLink>
                 </div>
-            </>
+                <div className="moviePoster">
+                        {movieData}
+                </div>
+                
+            </div>
 
         )
     }
