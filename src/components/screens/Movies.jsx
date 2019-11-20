@@ -34,7 +34,7 @@ export default class Movies extends React.Component {
                 <div key={index}>
                     <h1>{movie.title}</h1>
                     <img src={movie.imageUrl} />
-                    <h2>{movie.releaseDate}</h2>
+                    <h2>Run Time: {movie.runTime} minutes</h2>
                 </div>
 
             )
@@ -47,7 +47,9 @@ export default class Movies extends React.Component {
                     <NavLink exact to="/addMovie" activeClassName="active">
                         Add a Movie!
             </NavLink>
-                    <h1>{movieData}</h1>
+                    <div className="moviePoster">
+                        <h1>{movieData}</h1>
+                    </div>
                 </div>
             </>
 

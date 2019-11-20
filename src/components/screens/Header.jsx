@@ -1,8 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Home from './Home'
-import Movies from './Movies'
-import MotD from './MotD'
 import './Header.css'
 
 const Header = () => {
