@@ -42,3 +42,32 @@ form input {
     font-size: 100%;
     cursor: pointer;
 }
+
+.path-text {
+    font-size: 90%;
+}
+
+.navLink {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: #7D80FF;
+    border-radius: 10%;
+
+}
+
+.navLink a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 500px) {
+    .submit-btn {
+        width: 30%;
+    }
+
+    .navLink {
+        width: 15%
+    }
+}

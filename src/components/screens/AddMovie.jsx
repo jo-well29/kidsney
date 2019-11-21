@@ -1,6 +1,7 @@
 import React from 'react'
 import { api } from '../../services/mockApiConfig'
 import './AddMovie.css'
+import { NavLink } from 'react-router-dom'
 
 
 export default class AddMovie extends React.Component {
@@ -33,9 +34,7 @@ export default class AddMovie extends React.Component {
             description: this.state.description,
             runTime: this.state.runTime
         })
-            .then((res) => {
-                console.log(res)
-            })
+        .then(res => (res.status === 201 ? this.props.history.push('/movies') : null))
 
         this.setState({
             title: '',
@@ -63,7 +62,7 @@ export default class AddMovie extends React.Component {
                             value={this.state.title}
                             onChange={(e) => this.onChange(e)} />
 
-                        
+
                         <label>Image Url</label>
                         <input
                             type="text"
@@ -86,6 +85,14 @@ export default class AddMovie extends React.Component {
 
                         <input type="submit" value="Submit" className="submit-btn" />
                     </form>
+                    <div className="path-text">
+                        <h2>Go Back to</h2>
+                    </div>
+                    <div className="navLink">
+                        <NavLink exact to='/movies' activeClassName="active">
+                            Movies
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         )

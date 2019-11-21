@@ -6,51 +6,52 @@ class Header extends React.Component {
     constructor() {
         super()
         this.state = {
-           
+
         }
     }
 
     handleNav = (e) => {
         console.log(e.target.innerText)
         this.setState({
-            clickedHome:'',
+            clickedHome: '',
             clickedMovies: '',
             clickedMotD: ''
         })
         e.target.innerText === 'Home' &&
-        this.setState({
-            clickedHome: true,
-        })
+            this.setState({
+                clickedHome: true,
+            })
         e.target.innerText === 'Movies' &&
-        this.setState({
-            clickedMovies: true,
-        })
+            this.setState({
+                clickedMovies: true,
+            })
         e.target.innerText === 'Movie of the Day' &&
-        this.setState({
-            clickedMotD: true,
-        })
-     
+            this.setState({
+                clickedMotD: true,
+            })
+
     }
-    
+
 
     render() {
-        const navMovies = this.state.clickedMovies ? 'blue'  : null
-        const navMotD = this.state.clickedMotD ? 'blue'  : null
+        const navHome = this.state.clickedHome ? 'blue' : null
+        const navMovies = this.state.clickedMovies ? 'blue' : null
+        const navMotD = this.state.clickedMotD ? 'blue' : null
         return (
             <nav>
                 <img className="logo" src="https://i.ibb.co/PQwm5Kc/kidsney-logo.png" />
                 <div className="nav-bar" onClick={this.handleNav}>
-                    <NavLink exact to='/' activeClassName="active">
+                    <NavLink exact to='/' activeClassName="active" className={navHome}>
                         Home
-                </NavLink>
+                        </NavLink>
                     <NavLink exact to='/movies' activeClassName="active"
-                    className={navMovies}>
+                        className={navMovies}>
                         Movies
-                </NavLink>
+                        </NavLink>
                     <NavLink exact to="/MotD" activeClassName="active"
-                    className={navMotD}>
+                        className={navMotD}>
                         Movie of the Day
-                </NavLink>
+                        </NavLink>
                 </div>
             </nav>
         )

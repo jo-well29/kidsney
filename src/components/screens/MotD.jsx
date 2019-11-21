@@ -51,9 +51,11 @@ export default class MotD extends React.Component {
             <div>
                 <h1>Movie of the Day</h1>
                 <div className="rand-container">
-                    <h1>{randObj && randObj.title}</h1>
-                    <img src={randObj && image_url + randObj.poster_path} />
-                    {<p>{randObj && randObj.overview}</p>}
+                    <div className="third-card">
+                        <h1>{randObj && randObj.title}</h1>
+                        <img src={randObj && image_url + randObj.poster_path} />
+                        {<p>{randObj && randObj.overview}</p>}
+                    </div>
                 </div>
             </div>
 

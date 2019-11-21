@@ -1,0 +1,17 @@
+.homeScreen button {
+    display: flex;
+    position: relative;
+    bottom: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20vw;
+    height:20vh;
+    justify-content: center;
+    opacity: 70%;
+    background-color: #faae28;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+
+
+}
