@@ -45,14 +45,16 @@ export default class Movies extends React.Component {
             <div className="movies">
                 <h1>Movies</h1>
                 <div className="movieAdd">
-                    <NavLink exact to="/addMovie" activeClassName="active">
-                        Add a Movie!
-                    </NavLink>
+                    <div className="btn-style">
+                        <NavLink exact to="/addMovie" activeClassName="active">
+                            Add a Movie!
+                        </NavLink>
+                    </div>
                 </div>
                 <div className="moviePoster">
-                        {movieData}
+                    {movieData}
                 </div>
-                
+
             </div>
 
         )

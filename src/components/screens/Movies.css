@@ -5,11 +5,9 @@
 
 .movieAdd {
     color: black;
-    border: 2px solid black
 }
 
 .moviePoster {
-    border: 2px solid blue;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -29,8 +27,8 @@
 }
 
 .moviePoster h2 {
-    font-size: 15px;
-    word-break: normal;
+    font-size: 17px;
+    margin-bottom: 0;
 }
 
 .movie-container .image-url {
@@ -40,9 +38,33 @@
 }
 
 .movie-container {
-    border: 2px solid black;
     width: 30vw;
-    background-color: #ceb992;
-    margin: 20px
+    background-color: #787586;
+    margin: 20px;
+    overflow: scroll;
 }
 
+.movieAdd a {
+    text-decoration: none;
+    color:white
+}
+
+.btn-style {
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    width: 7vw;
+    margin: 0 auto
+}
+
+.btn-style:hover {
+    background-color: #3e8e41;
+    color: white;
+}
