@@ -55,7 +55,7 @@ export default class AddMovie extends React.Component {
                 <div className="form-list">
                     <form onSubmit={this.onSubmit}>
 
-                        <label>Movie Title</label>
+                        <label><span>Movie Title</span></label>
                         <input
                             type="text"
                             name="title"
@@ -63,20 +63,20 @@ export default class AddMovie extends React.Component {
                             onChange={(e) => this.onChange(e)} />
 
 
-                        <label>Image Url</label>
+                        <label><span>Image Url</span></label>
                         <input
                             type="text"
                             value={this.state.imageUrl} name="imageUrl"
                             onChange={(e) => this.onChange(e)} />
 
-                        <label>Description</label>
+                        <label><span>Description</span></label>
                         <input
                             type="text"
                             value={this.state.description}
                             name="description"
                             onChange={(e) => this.onChange(e)} />
 
-                        <label>Run Time in Minutes</label>
+                        <label><span>Run Time in Minutes</span></label>
                         <input
                             type="text"
                             value={this.state.runTime}

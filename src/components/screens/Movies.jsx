@@ -10,7 +10,7 @@ export default class Movies extends React.Component {
         super()
         this.state = {
             movies: [],
-            moviesToDelete: {},
+            moviesToDelete: '',
             toDelete: false
 
         }
@@ -31,7 +31,8 @@ export default class Movies extends React.Component {
     }
 
     handleDeleteMovies = () => {
-        api.delete(`/movies${this.state.moviesToDelete.id}`)
+        console.log(this.state.moviesToDelete)
+        api.delete(`/${this.state.moviesToDelete}`)
             .then(() => {
                 const allMovies = this.state.movies
                 allMovies.splice(this.state.moviesToDelete.index, 1)
@@ -39,51 +40,62 @@ export default class Movies extends React.Component {
                     movies: allMovies
                 })
             }).then(() => this.handleCloseModal())
+            .then(()=>{
+                this.fetchMovies()
+            })
             .catch(err => console.error(err))
     }
 
 
-    handleOpenModal = (movies, index) =>
-        this.setState({ toDelete: true, moviesToDelete: { ...movies, index } })
+    handleOpenModal = (id) => {
+        console.log(id)
+        this.setState({
+            toDelete: true,
+            moviesToDelete: id
+        })
+
+    }
 
 
     handleCloseModal = () => this.setState({ toDelete: false, moviesToDelete: {} })
 
-    renderDeleteConfirmModal = () => {
-        if (this.state.toDelete) {
-            return (
-                <div className="modal open">
-                    <h4>
-                        Are you Sure you want to delete {this.state.moviesToDelete.title}?
-                    </h4>
-                    <div className="buttons">
-                        <Button
-                            color="danger"
-                            title="Yes"
-                            onClick={this.handleDeleteMovies}
-                        />
-                        <Button
-                            color="primary"
-                            title="Cancel"
-                            onClick={this.handleCloseModal}
-                        />
-                    </div>
-                </div>
-            )
-        } else {
-            return <div className="modal close" />
-        }
-    }
+
 
     render() {
+
+        let renderDeleteConfirmModal = 
+        this.state.toDelete &&
+            <div className="modal open">
+                <h4>
+                    Are you Sure you want to delete {this.state.moviesToDelete.title}?
+                    </h4>
+                <div className="buttons">
+                    <Button
+                        color="danger"
+                        title="Yes"
+                        onClick={this.handleDeleteMovies}
+                    />
+                    <Button
+                        color="primary"
+                        title="Cancel"
+                        onClick={this.handleCloseModal}
+                    />
+                </div>
+            </div>
+
+
+
+
+        console.log(this.state)
         const movieData = this.state.movies.map((movie, index) => {
             return (
                 <div key={index} className="movie-container">
-                    <Button 
+
+                    <Button
                         title="X"
                         className="delete"
-                        onClick={() => this.handleOpenModal(movie, index)}
-                        />
+                        onClick={()=> this.handleOpenModal(movie.id)}
+                    />
                     <h1>{movie.title}</h1>
                     <img className="image-url" src={movie.imageUrl} />
                     <p>Run Time: {movie.runTime} minutes</p>
@@ -103,6 +115,8 @@ export default class Movies extends React.Component {
                         </NavLink>
                     </div>
                 </div>
+                {renderDeleteConfirmModal}
+
                 <div className="moviePoster">
                     {movieData}
                 </div>
