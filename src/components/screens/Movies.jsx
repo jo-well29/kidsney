@@ -31,7 +31,6 @@ export default class Movies extends React.Component {
     }
 
     handleDeleteMovies = () => {
-        console.log(this.state.moviesToDelete)
         api.delete(`/${this.state.moviesToDelete}`)
             .then(() => {
                 const allMovies = this.state.movies
@@ -48,7 +47,6 @@ export default class Movies extends React.Component {
 
 
     handleOpenModal = (id) => {
-        console.log(id)
         this.setState({
             toDelete: true,
             moviesToDelete: id
@@ -115,7 +113,9 @@ export default class Movies extends React.Component {
                         </NavLink>
                     </div>
                 </div>
+                <div className="modal">
                 {renderDeleteConfirmModal}
+                </div>
 
                 <div className="moviePoster">
                     {movieData}
