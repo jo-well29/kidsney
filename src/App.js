@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, NavLink, Switch } from 'react-router-dom'
 import './App.css';
 import Header from './components/screens/Header'
-import { Routes } from './routes'
+import { Routes } from './routes/index.js'
 
 function App() {
   return (

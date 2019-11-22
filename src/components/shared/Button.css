@@ -1,0 +1,49 @@
+.homeScreen button {
+    display: flex;
+    position: relative;
+    bottom: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20vw;
+    height:20vh;
+    justify-content: center;
+    opacity: 70%;
+    background-color: #faae28;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+
+
+}
+
+.movie-container button {
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 10px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-color:#b82601;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #b82601 inset, 0 0 0 0 #b82601;
+    transition: all 150ms ease-in-out;
+    position: relative;
+}
+
+.movie-container button:hover {
+    box-shadow: 0 0 10px 0 #b82601 inset, 0 0 10px 4px #b82601;
+}
+
+.modal button {
+
+}
